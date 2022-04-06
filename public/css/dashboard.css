@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+.logo{
+   font-size: 40px;
+   margin-top: 10px;
+}
+.navbar {
+    background-color:#46a29f ;
+    color: black;
+    border-bottom: 1px solid black;
+}
+.navbar img{
+    border-radius: 50%;
+    margin-right: 5px
+}
+
+.dashboard{
+    position:relative;
+    top: 97px;
+    text-align: center;
+}
+.aside{
+    background-color: #46a29f ;
+    color: #202833;
+    position:relative;
+    height: 83vh;
+    left: 5px;
+    text-align: start;
+    padding-left: 20px;
+}
+.aside a{
+    text-decoration: none;
+    color: black;
+    line-height: 5em;
+}
+.aside a:hover{
+    background-color: black;
+    color: white;
+}
+.main{
+    background-color: #202833;
+    color:#c5c6c8;
+    padding: 0px 0px 10px 5px;
+}
+.table{
+    color: #c5c6c8;
+    padding-bottom: 0px;
+    margin-bottom: 8px;
+}
+.service{
+    padding-top: 5px;
+    padding-left: 5px;
+}
+.parking, .tyres{
+    padding-bottom: 0px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #65fdf0;
+}
+.avator{
+    background-color: #202833;
+}
+.avator a{
+    color:#c5c6c8;
+}
+.revenue a {
+    text-decoration: none;
+    color: #202833;
+    font-size: 17px;
+}
+.revenue ul{
+    background-color:#46a29f;
+    border: none;
+}
+.revenue ul li a:hover {
+    background-color:#202833;
+    color:#46a29f;
+}
+.load a{
+    text-decoration: none;
+    color: #202833;
+    font-size: 17px;
+}
+.dropdown-menu a{
+    line-height: 1em;
+}
+.logout{
+    position: relative;
+    top: 20vh;
+    
+}
+.logout a:hover{
+    color: white;
+    background-color: black;
+    padding: 5px;
+    border-radius: 5px;
+}

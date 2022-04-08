@@ -5,7 +5,7 @@ const expressValidator = require ('express-validator');
 const flash = require('connect-flash');
 const passport = require('passport');
 const cors = require ('cors')
-const signup = require('./models/signupmodel')
+const signup = require('./models/userModel')
 const expressSession = require('express-session')({
   secret: 'secret',
   resave: false,
@@ -17,10 +17,10 @@ const expressSession = require('express-session')({
 const config = require('./config/database');
 
 // Importing Routes
-const loginRoutes = require('./routes/loginRoutes');
-const registerRoutes = require('./routes/registerRoutes');
-const signupRoutes = require('./routes/signupRoutes');
-const dashboardRoutes = require('./routes/dashboardRoute');
+// const loginRoutes = require('./routes/loginRoutes');
+// const registerRoutes = require('./routes/registerRoutes');
+const AuthRoutes = require('./routes/authRoutes');
+// const dashboardRoutes = require('./routes/dashboardRoute');
 // post route variable for my sign up form is similar to the get route variable 
 // because they are in the same file
 
@@ -63,9 +63,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(cors())
 
-passport.use(signup.createStrategy());
-passport.serializeUser(signup.serializeUser());
-passport.deserializeUser(signup.deserializeUser());
+// passport.use(signup.createStrategy());
+// passport.serializeUser(signup.serializeUser());
+// passport.deserializeUser(signup.deserializeUser());
 
 
 // EXPRESS MESSAGE MIDDLEWARE FLASH
@@ -77,10 +77,10 @@ app.use(function (req, res, next) {
 
   
 // use imported routes
-app.use('/', loginRoutes);
-app.use('/', registerRoutes);
-app.use('/', signupRoutes);
-app.use('/', dashboardRoutes);
+// app.use('/', loginRoutes);
+// app.use('/', registerRoutes);
+app.use('/', AuthRoutes);
+// app.use('/', dashboardRoutes);
 
 
 // For invalid routes as in if someone hits a non existent route.This should always be the last route after all other routes are excecuted.

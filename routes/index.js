@@ -16,12 +16,5 @@ router.get('/dashboard', (req,res) => {
     res.render('dashboard');
 });
 
-// router.post('/', (req,res) =>{
-//     res.render('login', {title:'login'});
-// })
-// router.post('/login', (req,res) =>{
-//     console.log(res.body);
-//     res.render('login', {title:'login'});
-// });
 
 module.exports = router;

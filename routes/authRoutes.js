@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const {signupSchema} = require('../config/validators/signup');
-const {loginSchema} = require('../config/validators/login');
+const {signupSchema} = require('../validators/signup');
+const {loginSchema} = require('../validators/login');
 
 // importing our schema
 const User = require('../models/userModel');

@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const signupSchema = require('./../models/userModel');
-const loginSchema = require('./../models/userModel');
+const {signupSchema} = require('../config/validators/signup');
+const {loginSchema} = require('../config/validators/login');
 
 // importing our schema
 const User = require('../models/userModel');
@@ -14,7 +14,7 @@ router.post("/signup", async (req, res) => {
     //Check if the user is already in the db using the email as the unique identifer
     const emailExists = await User.findOne({ email: req.body.email });
   
-    if (emailExists) return res.status(400).send("Email already exists");
+    if (emailExists) return res.status(400).send({meaasge:"Email already exists"});
   
   
     //create new user
@@ -28,8 +28,7 @@ router.post("/signup", async (req, res) => {
   
     try {
       const savedUser = await user.save();
-      res.send(savedUser);
-      res.status(201).send({message:"Success"}); 
+      res.status(201).send({message:"Success", user:savedUser}); 
     } catch (err) {
       res.status(400).send(err);
     }

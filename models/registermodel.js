@@ -6,12 +6,12 @@ const registerSchema = mongoose.Schema({
     required: true,
     trim: true,
   },
-  receipt: {
+  receiptNo: {
     type: String,
     required: true,
     trim: true,
   },
-  phone: {
+  phoneNo: {
     type: String,
     required: true,
     trim: true,
@@ -38,6 +38,7 @@ const registerSchema = mongoose.Schema({
   },
   service: {
     type: String,
+    enum:['parking','battery','tyre'],
     required: true,
     trim: true,
   },
@@ -46,7 +47,7 @@ const registerSchema = mongoose.Schema({
     required: true,
     trim: true,
   },
-  details: {
+  detail: {
     type: String,
     required: true,
     trim: true,
@@ -63,4 +64,4 @@ const registerSchema = mongoose.Schema({
   },
 });
 
-const register = module.exports = mongoose.model('register', registerSchema );
+const register = module.exports = mongoose.model('Client', registerSchema );

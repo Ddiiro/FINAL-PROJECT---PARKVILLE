@@ -1,74 +1,43 @@
 const express = require('express');
 const router = express.Router();
-const passport = require('passport');
-const expressValidator = require('express-validator');
-const mongoose = require('mongoose')
+const {registerSchema} = require('../validators/register');
 
-// router.use(expressValidator());
+// importing our schema
+const Client = require('../models/registermodel');
 
-// requiring schema
-const Register = require('../models/registermodel')
-
-// handling the get route
-
-router.get('/register', (req, res) => {
-    res.render('register');
-});
-
-// route for posting
-router.post('/register', (req, res) => {
-    // declare variables that match your form input names
-    // we assign them to req because we are requesting node js to forward data
-    const name = req.body.name;
-    const receipt = req.body.receipt;
-    const phone = req.body.phone;
-    const time = req.body.time;
-    const date = req.body.date;
-    const plateNo = req.body.plateNo;
-    const ninNo = req.body.ninNo;
-    const service = req.body.service;
-    const shift = req.body.shift;
-    const details = req.body.details;
-    const duration = req.body.duration;
-    const price = req.body.price;
-
-    // // checking for errors/handling errors
-    // Incase of an error send back the form
-    const errors = req.validationErrors()
-    if (errors) {
-        res.render('register')
+//working on our register validation
+router.post("/register", async (req, res) => {
+    const { error } = registerSchema.validate(req.body);
+    if (error) return res.status(400).send({message:error.details[0].message});
+  
+    //Check if the user is already in the db using the receipt number as the unique identifer
+    const receiptNoExists = await Client.findOne({receiptNo: req.body.receiptNo});
+  
+    if (receiptNoExists) return res.status(400).send({meaasge:"User has already registered for this service"});
+  
+  
+    //create new user
+    const client = new Client({
+        name:req.body.name,
+        receiptNo:req.body.receiptNo,
+        phoneNo:req.body.phoneNo,
+        time:req.body.time,
+        date:req.body.date,
+        plateNo:req.body.plateNo,
+        ninNo:req.body.ninNo,
+        service:req.body.service,
+        shift:req.body.shift,
+        detail:req.body.detail,
+        duration:req.body.duration,
+        price:req.body.price,
+    });
+  
+    try {
+      const savedClient = await client.save();
+      res.status(201).send({message:"Client has been successfully registered", client:savedClient}); 
+    } catch (err) {
+      res.status(400).send({message:err});
     }
-
-    else {
-        let newRegister = new Register({
-            name:name,
-            receipt: receipt,
-            phone: phone,
-            time: time,
-            date: date,
-            plateNo: plateNo,
-            ninNo: ninNo,
-            service: service,
-            shift: shift,
-            details: details,
-            duration: duration,
-            price: price,
-
-        });
-        // saving
-        newRegister.save((err) => {
-            if (err) {
-                console.error(err);
-                return;
-            }
-            else {
-                req.flash('Great!!', 'Client added successfully.')
-                console.log('Client has been successfully added');
-                res.redirect('/dashboard')
-            }
-        })
-    }
-
-});
+  });
 
 module.exports = router;

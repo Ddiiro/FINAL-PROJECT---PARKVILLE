@@ -39,7 +39,7 @@
 .aside a{
     text-decoration: none;
     color: black;
-    line-height: 5em;
+    line-height: 2em;
 }
 .aside a:hover{
     background-color: black;
@@ -93,7 +93,7 @@
 }
 .logout{
     position: relative;
-    top: 20vh;
+    top: 50vh;
     
 }
 .logout a:hover{

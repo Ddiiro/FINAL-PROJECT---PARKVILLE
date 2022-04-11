@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const {registerSchema} = require('../validators/register');
 
+
 // importing our schema
 const Client = require('../models/registermodel');
 

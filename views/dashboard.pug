@@ -29,7 +29,7 @@ nav.navbar.navbar-expand-lg.navbar-dark.fixed-top
             li
               hr.dropdown-divider
             li
-              a.dropdown-item(href='login') Log out
+              a.dropdown-item(href='/html/index.html') Log out
 // --------------------------------------- dashboard---------------------------------------------
 .conatiner.dashboard
   .row
@@ -38,17 +38,17 @@ nav.navbar.navbar-expand-lg.navbar-dark.fixed-top
       h4 Dashboard
       hr
       div
-        a(href='register') Register New Customer
+        a(href='/html/register.html') Register Customer
       .dropdown.revenue
         a#dropdownMenuLink.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
-          | Revenue details
+          | Revenue Details
         ul.dropdown-menu(aria-labelledby='dropdownMenuLink')
           li
-            a.dropdown-item(href='#') Car Parking
+            a.dropdown-item(href='#') Income
           li
-            a.dropdown-item(href='#') Car Tyres
+            a.dropdown-item(href='#') Receipts
           li
-            a.dropdown-item(href='#') Car Batteries
+            a.dropdown-item(href='#') Invoices
       .dropdown
         a#dropdownMenuLink.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
           | Load Management
@@ -61,32 +61,36 @@ nav.navbar.navbar-expand-lg.navbar-dark.fixed-top
             a.dropdown-item(href='#') Car Batteries
       .logout
         p
-          a(href='login') Log Out
+          a(href='/html/index.html') Log Out
     // --------------------------------------- main ---------------------------------------------
     .col-10.main
       .container.service
         // --------------------------------------- Car parking ---------------------------------------------
         .row.parking
-          .col-4
+          .col-3
             .card.text-white.bg-success
               .card-header
                 h3 Car Parking
               .card-body
                 h6.card-title Ugx 5,000,000/=
                 p.card-text Some quick example text to build on the card title.
-          .col-8
+          .col-9
             table.table
               thead(style='color:#46a29f ;')
                 tr
                   th(scope='col') #
-                  th(scope='col') First
-                  th(scope='col') Last
-                  th(scope='col') RecptNo.
+                  th(scope='col') Name
+                  th(scope='col') RecptNo
+                  th(scope='col') PhoneNo.
                   th(scope='col') Time
                   th(scope='col') Date
-                  th(scope='col') Gender
+                  th(scope='col') plateNo
                   th(scope='col') NinNo
                   th(scope='col') Service
+                  th(scope='col') Shift
+                  th(scope='col') Details
+                  th(scope='col') Duration
+                  th(scope='col') Price
               tbody
                 tr
                   th(scope='row') 1
@@ -98,6 +102,10 @@ nav.navbar.navbar-expand-lg.navbar-dark.fixed-top
                   td @mdo
                   td Mark
                   td Otto
+                  td @mdo
+                  td Mark
+                  td Otto
+                  td Otto
                 tr
                   th(scope='row') 2
                   td Mark
@@ -107,6 +115,10 @@ nav.navbar.navbar-expand-lg.navbar-dark.fixed-top
                   td Otto
                   td @mdo
                   td Mark
+                  td Otto
+                  td @mdo
+                  td Mark
+                  td Otto
                   td Otto
                 tr
                   th(scope='row') 3
@@ -118,28 +130,36 @@ nav.navbar.navbar-expand-lg.navbar-dark.fixed-top
                   td @mdo
                   td Mark
                   td Otto
+                  td @mdo
+                  td Mark
+                  td Otto
+                  td Otto
         // --------------------------------------- Car Tyres ---------------------------------------------
         .row.tyres
-          .col-4
+          .col-3
             .card.text-white.bg-danger
               .card-header
                 h3 Car Tyres
               .card-body
                 h6.card-title  Ugx 3,200,000/=
                 p.card-text Some quick example text to build on the card title.
-          .col-8
+          .col-9
             table.table
               thead(style='color:#46a29f ;')
                 tr
                   th(scope='col') #
-                  th(scope='col') First
-                  th(scope='col') Last
-                  th(scope='col') RecptNo.
+                  th(scope='col') Name
+                  th(scope='col') RecptNo
+                  th(scope='col') PhoneNo.
                   th(scope='col') Time
                   th(scope='col') Date
-                  th(scope='col') Gender
+                  th(scope='col') plateNo
                   th(scope='col') NinNo
                   th(scope='col') Service
+                  th(scope='col') Shift
+                  th(scope='col') Details
+                  th(scope='col') Duration
+                  th(scope='col') Price
               tbody
                 tr
                   th(scope='row') 1
@@ -151,6 +171,10 @@ nav.navbar.navbar-expand-lg.navbar-dark.fixed-top
                   td @mdo
                   td Mark
                   td Otto
+                  td @mdo
+                  td Mark
+                  td Otto
+                  td Otto
                 tr
                   th(scope='row') 2
                   td Mark
@@ -160,6 +184,10 @@ nav.navbar.navbar-expand-lg.navbar-dark.fixed-top
                   td Otto
                   td @mdo
                   td Mark
+                  td Otto
+                  td @mdo
+                  td Mark
+                  td Otto
                   td Otto
                 tr
                   th(scope='row') 3
@@ -171,28 +199,36 @@ nav.navbar.navbar-expand-lg.navbar-dark.fixed-top
                   td @mdo
                   td Mark
                   td Otto
+                  td @mdo
+                  td Mark
+                  td Otto
+                  td Otto
         // --------------------------------------- battery ---------------------------------------------
         .row.batteries
-          .col-4
+          .col-3
             .card.text-white.bg-warning
               .card-header
                 h3 Car Batteries
               .card-body
                 h6.card-title  Ugx 1,000,000/=
                 p.card-text Some quick example text to build on the card title.
-          .col-8
+          .col-9
             table.table
               thead(style='color:#46a29f ;')
                 tr
                   th(scope='col') #
-                  th(scope='col') First
-                  th(scope='col') Last
-                  th(scope='col') RecptNo.
+                  th(scope='col') Name
+                  th(scope='col') RecptNo
+                  th(scope='col') PhoneNo.
                   th(scope='col') Time
                   th(scope='col') Date
-                  th(scope='col') Gender
+                  th(scope='col') plateNo
                   th(scope='col') NinNo
                   th(scope='col') Service
+                  th(scope='col') Shift
+                  th(scope='col') Details
+                  th(scope='col') Duration
+                  th(scope='col') Price
               tbody
                 tr
                   th(scope='row') 1
@@ -204,6 +240,10 @@ nav.navbar.navbar-expand-lg.navbar-dark.fixed-top
                   td @mdo
                   td Mark
                   td Otto
+                  td @mdo
+                  td Mark
+                  td Otto
+                  td Otto
                 tr
                   th(scope='row') 2
                   td Mark
@@ -214,6 +254,10 @@ nav.navbar.navbar-expand-lg.navbar-dark.fixed-top
                   td @mdo
                   td Mark
                   td Otto
+                  td @mdo
+                  td Mark
+                  td Otto
+                  td Otto
                 tr
                   th(scope='row') 3
                   td Mark
@@ -223,5 +267,9 @@ nav.navbar.navbar-expand-lg.navbar-dark.fixed-top
                   td Otto
                   td @mdo
                   td Mark
+                  td Otto
+                  td @mdo
+                  td Mark
+                  td Otto
                   td Otto
 script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM' crossorigin='anonymous')

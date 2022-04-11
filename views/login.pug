@@ -8,42 +8,26 @@ head
   link(rel='stylesheet' href='/css/style.css')
   link(rel='stylesheet' href='path/to/font-awesome/css/font-awesome.min.css')
   title Parkville || Welcome
-.container-fluid 
-  .row
-    .col-md-4.left
-      .logo
-        img(width='120px' src='/images/Logo black.png' alt='')
-      div
-        h5 Sign in
-        p Log into your account here.
-      .login
-        form(action='.' method="POST")
-          li
-            input.details(type='text' placeholder='Enter your name' required='')
-          li
-            input.details(type='password' name='' id='' placeholder='Enter your password' required='')
-          button Sign in
-          li
-            input(type='checkbox' name='' id='')
-            |  Remember me.
-          .register
-            p
-              | New User? 
-              a(href='signup') Signup
-        .copyright Parkville &copy; 2022.
-    .col-md-8
-      #carouselExampleControls.carousel.slide(data-bs-ride='carousel')
-        .carousel-inner
-          .carousel-item.active
-            img.d-block.w-100(src='/images/tyre.jpg' alt='...')
-          .carousel-item
-            img.d-block.w-100(src='/images/Smaller cars parking.jfif' alt='...')
-          .carousel-item
-            img.d-block.w-100(src='/images/battery.jfif' alt='...')
-        button.carousel-control-prev(type='button' data-bs-target='#carouselExampleControls' data-bs-slide='prev')
-          span.carousel-control-prev-icon(aria-hidden='true')
-          span.visually-hidden Previous
-        button.carousel-control-next(type='button' data-bs-target='#carouselExampleControls' data-bs-slide='next')
-          span.carousel-control-next-icon(aria-hidden='true')
-          span.visually-hidden Next
+.left
+  div
+    h1 Sign in
+    p Already have an account? Just login below to access your account.
+  .login
+    form(action='')
+      li
+        input.details(type='text' placeholder='Enter your name' required='')
+      li
+        input.details(type='password' name='' id='' placeholder='Enter your password' required='')
+      button Sign in
+      li
+        input(type='checkbox' name='' id='')
+        |  Remember me.
+      .register
+        p
+          | New User? 
+          a(href='/html/sign_up.html') Signup
+    .copyright Parkville &copy; 2022.
+.aside
+  img(src='/images/Logo black.png' alt='')
+  br
 script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM' crossorigin='anonymous')

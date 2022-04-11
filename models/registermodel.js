@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const registerSchema = mongoose.Schema({
-  name: {
+  fullName: {
     type: String,
     required: true,
     trim: true,

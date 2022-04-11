@@ -1,7 +1,7 @@
 const Joi = require('joi');
 
 const registerSchema = Joi.object({
-    name:Joi.string().min(5).max(20).required(),
+    fullName:Joi.string().min(5).max(20).required(),
     receiptNo:Joi.string().min(5).max(20).required(),
     phoneNo:Joi.string().min(5).max(20).required(),
     time:Joi.string().required(),

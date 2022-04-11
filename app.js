@@ -18,7 +18,7 @@ const config = require('./config/database');
 
 // Importing Routes
 // const loginRoutes = require('./routes/loginRoutes');
-const registerRoutes = require('./routes/registerRoutes');
+const RegisterRoutes = require('./routes/registerRoutes');
 const AuthRoutes = require('./routes/authRoutes');
 // const dashboardRoutes = require('./routes/dashboardRoute');
 // post route variable for my sign up form is similar to the get route variable 
@@ -78,7 +78,7 @@ app.use(function (req, res, next) {
   
 // use imported routes
 // app.use('/', loginRoutes);
-app.use('/', registerRoutes);
+app.use('/', RegisterRoutes);
 app.use('/', AuthRoutes);
 // app.use('/', dashboardRoutes);
 

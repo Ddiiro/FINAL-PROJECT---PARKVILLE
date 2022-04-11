@@ -17,10 +17,10 @@ const expressSession = require('express-session')({
 const config = require('./config/database');
 
 // Importing Routes
-// const loginRoutes = require('./routes/loginRoutes');
+const LoginRoutes = require('./routes/loginRoutes');
 const RegisterRoutes = require('./routes/registerRoutes');
-const AuthRoutes = require('./routes/authRoutes');
-// const dashboardRoutes = require('./routes/dashboardRoute');
+const SignupRoutes = require('./routes/signupRoutes');
+const DashboardRoutes = require('./routes/dashboardRoutes');
 // post route variable for my sign up form is similar to the get route variable 
 // because they are in the same file
 
@@ -77,10 +77,10 @@ app.use(function (req, res, next) {
 
   
 // use imported routes
-// app.use('/', loginRoutes);
+app.use('/', LoginRoutes);
 app.use('/', RegisterRoutes);
-app.use('/', AuthRoutes);
-// app.use('/', dashboardRoutes);
+app.use('/', SignupRoutes);
+app.use('/', DashboardRoutes);
 
 
 // For invalid routes as in if someone hits a non existent route.This should always be the last route after all other routes are excecuted.

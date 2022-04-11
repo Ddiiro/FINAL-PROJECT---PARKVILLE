@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const {signupSchema} = require('../validators/signup');
-const {loginSchema} = require('../validators/login');
 
 
 // importing our schema
@@ -35,19 +34,8 @@ router.post("/signup", async (req, res) => {
     }
 });
 
-//working on our login validation
-router.post("/login", async (req, res) => {
-  const { error } = loginSchema.validate(req.body);
-  if (error) return res.status(400).send(error.details[0].message);
-
-  const user = await User.findOne({ email: req.body.email });
-  //checking if the email exists in the database
-  if (!user) return res.status(400).send("User doesn't exist");
-
-  //checking if password is correct
-  if (!req.body.password === user.password)
-    return res.status(400).send("Email or password is wrong");
-  return res.status(201).send({ message: "Successfully logged in" });
+router.get('/signup', (req,res) => {
+  res.render('signup');
 });
 
 module.exports = router;

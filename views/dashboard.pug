@@ -29,7 +29,7 @@ nav.navbar.navbar-expand-lg.navbar-dark.fixed-top
             li
               hr.dropdown-divider
             li
-              a.dropdown-item(href='/html/index.html') Log out
+              a.dropdown-item(href='login') Log out
 // --------------------------------------- dashboard---------------------------------------------
 .conatiner.dashboard
   .row
@@ -38,17 +38,17 @@ nav.navbar.navbar-expand-lg.navbar-dark.fixed-top
       h4 Dashboard
       hr
       div
-        a(href='/html/register.html') Register Customer
+        a(href='register') Register New Customer
       .dropdown.revenue
         a#dropdownMenuLink.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
-          | Revenue Details
+          | Revenue details
         ul.dropdown-menu(aria-labelledby='dropdownMenuLink')
           li
-            a.dropdown-item(href='#') Income
+            a.dropdown-item(href='#') Car Parking
           li
-            a.dropdown-item(href='#') Receipts
+            a.dropdown-item(href='#') Car Tyres
           li
-            a.dropdown-item(href='#') Invoices
+            a.dropdown-item(href='#') Car Batteries
       .dropdown
         a#dropdownMenuLink.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
           | Load Management
@@ -61,215 +61,134 @@ nav.navbar.navbar-expand-lg.navbar-dark.fixed-top
             a.dropdown-item(href='#') Car Batteries
       .logout
         p
-          a(href='/html/index.html') Log Out
+          a(href='login') Log Out
     // --------------------------------------- main ---------------------------------------------
     .col-10.main
       .container.service
         // --------------------------------------- Car parking ---------------------------------------------
         .row.parking
-          .col-3
+          .col-2
             .card.text-white.bg-success
               .card-header
                 h3 Car Parking
               .card-body
-                h6.card-title Ugx 5,000,000/=
+                h6.card-title Ugx #{parkingPrice} /=
                 p.card-text Some quick example text to build on the card title.
-          .col-9
+          .col-10
             table.table
               thead(style='color:#46a29f ;')
                 tr
                   th(scope='col') #
                   th(scope='col') Name
-                  th(scope='col') RecptNo
-                  th(scope='col') PhoneNo.
+                  th(scope='col') RecptNo.
+                  th(scope='col') PhoneNo
                   th(scope='col') Time
                   th(scope='col') Date
-                  th(scope='col') plateNo
+                  th(scope='col') PlateNo
                   th(scope='col') NinNo
                   th(scope='col') Service
-                  th(scope='col') Shift
-                  th(scope='col') Details
-                  th(scope='col') Duration
+                  th(scope='col') Shift 
+                  th(scope='col') Details 
+                  th(scope='col') Duration 
                   th(scope='col') Price
               tbody
-                tr
-                  th(scope='row') 1
-                  td Mark
-                  td Otto
-                  td @mdo
-                  td Mark
-                  td Otto
-                  td @mdo
-                  td Mark
-                  td Otto
-                  td @mdo
-                  td Mark
-                  td Otto
-                  td Otto
-                tr
-                  th(scope='row') 2
-                  td Mark
-                  td Otto
-                  td @mdo
-                  td Mark
-                  td Otto
-                  td @mdo
-                  td Mark
-                  td Otto
-                  td @mdo
-                  td Mark
-                  td Otto
-                  td Otto
-                tr
-                  th(scope='row') 3
-                  td Mark
-                  td Otto
-                  td @mdo
-                  td Mark
-                  td Otto
-                  td @mdo
-                  td Mark
-                  td Otto
-                  td @mdo
-                  td Mark
-                  td Otto
-                  td Otto
+                each receipt in parkingReceipts
+                    tr
+                      th(scope='row')
+                      td= receipt.fullName
+                      td= receipt.receiptNo
+                      td= receipt.phoneNo
+                      td= receipt.time
+                      td= receipt.date
+                      td= receipt.plateNo
+                      td= receipt.ninNo
+                      td= receipt.service
+                      td= receipt.shift
+                      td= receipt.detail
+                      td= receipt.duration
+                      td= receipt.price
         // --------------------------------------- Car Tyres ---------------------------------------------
         .row.tyres
-          .col-3
+          .col-2
             .card.text-white.bg-danger
               .card-header
                 h3 Car Tyres
               .card-body
-                h6.card-title  Ugx 3,200,000/=
+                h6.card-title  Ugx #{tyrePrice} /=
                 p.card-text Some quick example text to build on the card title.
-          .col-9
+          .col-10
             table.table
               thead(style='color:#46a29f ;')
-                tr
+               tr
                   th(scope='col') #
                   th(scope='col') Name
-                  th(scope='col') RecptNo
-                  th(scope='col') PhoneNo.
+                  th(scope='col') RecptNo.
+                  th(scope='col') PhoneNo
                   th(scope='col') Time
                   th(scope='col') Date
-                  th(scope='col') plateNo
+                  th(scope='col') PlateNo
                   th(scope='col') NinNo
                   th(scope='col') Service
-                  th(scope='col') Shift
-                  th(scope='col') Details
-                  th(scope='col') Duration
+                  th(scope='col') Shift 
+                  th(scope='col') Details 
+                  th(scope='col') Duration 
                   th(scope='col') Price
               tbody
-                tr
-                  th(scope='row') 1
-                  td Mark
-                  td Otto
-                  td @mdo
-                  td Mark
-                  td Otto
-                  td @mdo
-                  td Mark
-                  td Otto
-                  td @mdo
-                  td Mark
-                  td Otto
-                  td Otto
-                tr
-                  th(scope='row') 2
-                  td Mark
-                  td Otto
-                  td @mdo
-                  td Mark
-                  td Otto
-                  td @mdo
-                  td Mark
-                  td Otto
-                  td @mdo
-                  td Mark
-                  td Otto
-                  td Otto
-                tr
-                  th(scope='row') 3
-                  td Mark
-                  td Otto
-                  td @mdo
-                  td Mark
-                  td Otto
-                  td @mdo
-                  td Mark
-                  td Otto
-                  td @mdo
-                  td Mark
-                  td Otto
-                  td Otto
+                each receipt in tyreReceipts
+                    tr
+                      th(scope='row')
+                      td= receipt.fullName
+                      td= receipt.receiptNo
+                      td= receipt.phoneNo
+                      td= receipt.time
+                      td= receipt.date
+                      td= receipt.plateNo
+                      td= receipt.ninNo
+                      td= receipt.service
+                      td= receipt.shift
+                      td= receipt.detail
+                      td= receipt.duration
+                      td= receipt.price
         // --------------------------------------- battery ---------------------------------------------
         .row.batteries
-          .col-3
+          .col-2
             .card.text-white.bg-warning
               .card-header
                 h3 Car Batteries
               .card-body
-                h6.card-title  Ugx 1,000,000/=
+                h6.card-title  Ugx #{batteryPrice} /=
                 p.card-text Some quick example text to build on the card title.
-          .col-9
+          .col-10
             table.table
               thead(style='color:#46a29f ;')
                 tr
                   th(scope='col') #
                   th(scope='col') Name
-                  th(scope='col') RecptNo
-                  th(scope='col') PhoneNo.
+                  th(scope='col') RecptNo.
+                  th(scope='col') PhoneNo
                   th(scope='col') Time
                   th(scope='col') Date
-                  th(scope='col') plateNo
+                  th(scope='col') PlateNo
                   th(scope='col') NinNo
                   th(scope='col') Service
-                  th(scope='col') Shift
-                  th(scope='col') Details
-                  th(scope='col') Duration
+                  th(scope='col') Shift 
+                  th(scope='col') Details 
+                  th(scope='col') Duration 
                   th(scope='col') Price
               tbody
-                tr
-                  th(scope='row') 1
-                  td Mark
-                  td Otto
-                  td @mdo
-                  td Mark
-                  td Otto
-                  td @mdo
-                  td Mark
-                  td Otto
-                  td @mdo
-                  td Mark
-                  td Otto
-                  td Otto
-                tr
-                  th(scope='row') 2
-                  td Mark
-                  td Otto
-                  td @mdo
-                  td Mark
-                  td Otto
-                  td @mdo
-                  td Mark
-                  td Otto
-                  td @mdo
-                  td Mark
-                  td Otto
-                  td Otto
-                tr
-                  th(scope='row') 3
-                  td Mark
-                  td Otto
-                  td @mdo
-                  td Mark
-                  td Otto
-                  td @mdo
-                  td Mark
-                  td Otto
-                  td @mdo
-                  td Mark
-                  td Otto
-                  td Otto
+                each receipt in batteryReceipts
+                    tr
+                      th(scope='row')
+                      td= receipt.fullName
+                      td= receipt.receiptNo
+                      td= receipt.phoneNo
+                      td= receipt.time
+                      td= receipt.date
+                      td= receipt.plateNo
+                      td= receipt.ninNo
+                      td= receipt.service
+                      td= receipt.shift
+                      td= receipt.detail
+                      td= receipt.duration
+                      td= receipt.price
 script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM' crossorigin='anonymous')

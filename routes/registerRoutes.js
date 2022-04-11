@@ -35,7 +35,7 @@ router.post("/register", async (req, res) => {
   
     try {
       const savedClient = await client.save();
-      res.status(201).send({message:"Client has been successfully registered", client:savedClient}); 
+      res.redirect("/dashboard") ; 
     } catch (err) {
       res.status(400).send({message:err});
     }

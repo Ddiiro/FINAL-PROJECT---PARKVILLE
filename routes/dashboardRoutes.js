@@ -6,7 +6,6 @@ const Client = require('../models/registermodel');
 router.get('/dashboard', async (req, res) => {
     try{
         const receipts = await Client.find();
-        // res.status(200).send({message:'Success', receipts});
 
         const batteryReceipts = [];
         const tyreReceipts = [];

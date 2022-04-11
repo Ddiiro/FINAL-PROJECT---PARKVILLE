@@ -8,21 +8,21 @@ head
 .aside
   img(src='/images/Logo original.png' alt='')
   br
-form#register
+form(method='POST', action='')#register
   h1 Sign up
   p Create an account for free today!.
   li
-    input.details(type='text' placeholder='Enter first name' required='')
+    input.details(type='text' name='firstName' placeholder='Enter first name' required='')
   li
-    input.details(type='text' placeholder='Enter last name' required='')
+    input.details(type='text' name='lastName' placeholder='Enter last name' required='')
   li
-    input.details(type='tel' name='' id='' placeholder=' Enter phone no' required='')
+    input.details(type='tel' name='phoneNumber' id='' placeholder=' Enter phone no' required='')
   li
-    input.details(type='email' name='' id='' placeholder='Enter email' required='')
+    input.details(type='email' name='email' id='' placeholder='Enter email' required='')
   li
-    input.details(type='password' name='' id='' placeholder='Enter password' required='')
+    input.details(type='password' name='password' id='' placeholder='Enter password' required='')
   li
-    input.details(type='password' name='' id='' placeholder='Confirm password' required='')
+    input.details(type='password' name='confirmPassword' id='' placeholder='Confirm password' required='')
   li
     input(type='checkbox' name='' id='')
     |  I agree to the 

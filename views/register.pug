@@ -9,63 +9,64 @@ head
   title Parkville || Register
 img(src='/images/Logo black.png' alt='')
 br
-form
+form(action='' method='POST')
   h2 Service Registration Form
   .register
     li
-      label(for='') Enter Name
+      label(for='') Enter Full Name
     li
-      input(type='text' placeholder='Enter your Name' required='')
+      input(type='text' name='fullName' placeholder='Enter your Full Name' required='')
     li
       label(for='') Receipt Number
     li
-      input(type='number' name='' id='' placeholder='Enter valid receipt No' required='')
+      input(type='text' name='receiptNo' id='' placeholder='Enter valid receipt No'  value='PV0000001' required='')
     li
       label(for='') Phone Number
     li
-      input(type='tel' name='' id='' placeholder='Enter valid phone No' required='')
+      input(type='tel' name='phoneNo' id='' placeholder='Enter valid phone No' required='')
     .period
       div
         li
           label(for='') Time
         li
-          input(style='width: 155px;' type='time' name='' id='' required='')
+          input(style='width: 155px;' type='time' name='time' id='' required='')
       div
         li
           label(for='') Date
         li
-          input(type='date' name='' id='' required='')
+          input(type='date' name='date' id='' required='')
     .period
       div
         li
           label(for='') Number Plate
         li
-          input(style='width: 155px;' type='text' name='' id='' required='')
+          input(style='width: 155px;' type='text' name='plateNo' id='' required='')
       div
         li
           label(for='') Nin Number
         li
-          input(type='text' name='' id='' required='')
+          input(type='text' name='ninNo' id='' required='')
     div
       .service
         .type
           li
             label Service
-          select(name='' id='' required='')
-            option(value='') Parkng
-            option(value='') Battery
-            option(value='') Tyres
+          select(name='service' id='' required='')
+            option(value='parking') Parking
+            option(value='battery') Battery
+            option(value='tyre') Tyre 
         .type
           li
             label(for='') Shift
-          select(name='' id='' required='')
-            option(value='') Day
-            option(value='') Night
+          select(name='shift' id='' required='')
+            option(value='') 
+            option(value='Day') Day
+            option(value='Night') Night 
       li
-        input(placeholder='Service details' type='text' required='')
+        input(placeholder='Service details' name ='detail' type='text' required='')
       li
-        input(placeholder='Service duration' type='text' required='')
+        input(placeholder='Service duration' name='duration' type='text' required='')
       li
-        input(placeholder='Service Price' type='text' required='')
+        input(placeholder='Service Price' name ='price' type='text' required='')
     button(type='submit') Submit
 script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM' crossorigin='anonymous')

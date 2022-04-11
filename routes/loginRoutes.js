@@ -3,6 +3,8 @@ const router = express.Router();
 
 const {loginSchema} = require('../validators/login');
 
+const User = require("../models/userModel");
+
 //working on our login validation
 router.post("/login", async (req, res) => {
     const { error } = loginSchema.validate(req.body);
@@ -13,9 +15,11 @@ router.post("/login", async (req, res) => {
     if (!user) return res.status(400).send("User doesn't exist");
   
     //checking if password is correct
-    if (!req.body.password === user.password)
+    if (!req.body.password === user.password) {
       return res.status(400).send("Email or password is wrong");
-    return res.status(201).send({ message: "Successfully logged in" });
+    }
+    console.log('user', user)
+    res.redirect("/dashboard") ;
   });
 
   router.get('/login', (req,res) => {

@@ -31,7 +31,7 @@
     background-color: #46a29f ;
     color: #202833;
     position:relative;
-    height: 83vh;
+    height: 120vh;
     left: 5px;
     text-align: start;
     padding-left: 20px;
@@ -54,6 +54,9 @@
     color: #c5c6c8;
     padding-bottom: 0px;
     margin-bottom: 8px;
+}
+.display{
+    background-color: #202833;
 }
 .service{
     padding-top: 5px;
@@ -93,7 +96,7 @@
 }
 .logout{
     position: relative;
-    top: 50vh;
+    top: 90vh;
     
 }
 .logout a:hover{

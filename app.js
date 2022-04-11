@@ -21,8 +21,6 @@ const LoginRoutes = require('./routes/loginRoutes');
 const RegisterRoutes = require('./routes/registerRoutes');
 const SignupRoutes = require('./routes/signupRoutes');
 const DashboardRoutes = require('./routes/dashboardRoutes');
-// post route variable for my sign up form is similar to the get route variable 
-// because they are in the same file
 
 
 // Instantiating the app/server
@@ -55,7 +53,6 @@ app.use(express.urlencoded({extended:false}));
 // telling body parser to use json format
 app.use (express.json());
 
-// 
 app.use(expressSession);
 // initialise
 app.use(passport.initialize());
@@ -63,17 +60,12 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(cors())
 
-// passport.use(signup.createStrategy());
-// passport.serializeUser(signup.serializeUser());
-// passport.deserializeUser(signup.deserializeUser());
-
-
 // EXPRESS MESSAGE MIDDLEWARE FLASH
-app.use(require('connect-flash')());
-app.use(function (req, res, next) {
-  res.locals.messages = require('express-messages')(req, res);
-  next();
-});
+// app.use(require('connect-flash')());
+// app.use(function (req, res, next) {
+//   res.locals.messages = require('express-messages')(req, res);
+//   next();
+// });
 
   
 // use imported routes
